@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PlayProfit - Your ultimate gaming platform with 5000+ live games, sports fantasy, and color trading. Register now for the best gaming experience!">
+    <meta name="keywords" content="PlayProfit, gaming, live games, sports fantasy, color trading, online betting, crypto deposit">
+    <title>PlayProfit -  India's Trusted Fastest Growing Gaming Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2a0a5e;
+            --secondary-color: #ff6b00;
+            --accent-color: #00e676;
+            --text-color: #ffffff;
+            --dark-bg: #1a1a2e;
+            --glow-color: rgba(0, 230, 118, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .btn-login {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+        }
+        
+        .btn-login:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-register {
+            background-color: var(--secondary-color);
+            color: #000;
+        }
+        
+        .btn-register:hover {
+            background-color: #ff8c00;
+        }
+        
+        .btn-referral {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        
+        .btn-referral:hover {
+            background-color: #00ff88;
+        }
+        
+        /* Marquee Styles */
+        .marquee {
+            background-color: var(--secondary-color);
+            color: #000;
+            padding: 8px 0;
+            font-weight: bold;
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            z-index: 999;
+        }
+        
+        .marquee-content {
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Slider Styles */
+        .slider-container {
+            margin-top: 100px;
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .slider {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slide 4s infinite;
+        }
+        
+        .slide {
+            width: 25%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
+            100% { transform: translateX(-75%); }
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: var(--accent-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .feature-box {
+            background: linear-gradient(135deg, var(--primary-color), #3a0a7e);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent,
+                transparent,
+                transparent,
+                var(--glow-color)
+            );
+            transform: rotate(30deg);
+            animation: glow 3s linear infinite;
+        }
+        
+        @keyframes glow {
+            0% { transform: rotate(30deg) translate(-10%, -10%); }
+            100% { transform: rotate(30deg) translate(10%, 10%); }
+        }
+        
+        .feature-box h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-box p {
+            font-size: 16px;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 50px 20px;
+            background-color: rgba(42, 10, 94, 0.3);
+        }
+        
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-box {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .service-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .service-box p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .payment-methods h2 {
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+        }
+        
+        .highlight-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-align: center;
+            margin: 30px 0;
+            text-transform: uppercase;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-icon {
+            color: var(--text-color);
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: var(--primary-color);
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            border: 1px solid var(--secondary-color);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        .modal-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #2a1a4a;
+            color: var(--text-color);
+            font-size: 14px;
+        }
+        
+        .country-code {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .country-code-select {
+            flex: 1;
+            max-width: 100px;
+        }
+        
+        .phone-input {
+            flex: 2;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--secondary-color);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #ff8c00;
+        }
+        
+        .switch-form {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        
+        .switch-form a {
+            color: var(--accent-color);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        /* Success Modal */
+        .success-modal {
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 60px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .success-modal h2 {
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .success-modal p {
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .slider-container {
+                height: 250px;
+                margin-top: 140px;
+            }
+            
+            .marquee {
+                top: 110px;
+            }
+            
+            .features-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">PLAY<span>PROFIT</span></a>
+            <div class="header-buttons">
+                <button class="btn btn-referral" id="referralBtn">REFER & EARN</button>
+                <button class="btn btn-login" id="loginBtn">LOGIN</button>
+                <button class="btn btn-register" id="registerBtn">REGISTER</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-content">
+            🎉 WELCOME TO PLAYPROFIT - GET 10% BONUS ON YOUR EVERY DEPOSIT! 🎉 &nbsp;&nbsp;&nbsp; 
+            ⚡ SUPER FAST WITHDRAWALS PROCESSED WITHIN 5 MINUTES! ⚡ &nbsp;&nbsp;&nbsp;
+            💎 JOIN OUR TELEGRAM CHANNEL FOR EXCLUSIVE OFFERS! 💎
+        </div>
+    </div>
+    
+    <!-- Slider -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <<img src="C:\Users\dell\Music\PLAYPROFIT\Create a sleek 1200x400 banner for PlayProfit with a futuristic dark navy-to-purple gradient background, featuring glowing gridlines, digital neon effects, and subtle particle lights. On the left side, place the Pla.jpg" alt="PlayProfit 5000+ Games">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\dell\Music\PLAYPROFIT\Here’s a bold and policy-aware __1200x400 banner image prompt__ for __PlayProfit__, featuring a __10% Real Cash Welcome Bonus__ with a __Bollywood-style actor__, written in a single paragraph___Create a 1200x400 (1).jpg" alt="Live Sports Betting">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\dell\Music\PLAYPROFIT\Here’s a powerful __1200x400 banner image prompt__ for __PlayProfit__, highlighting __5000+ live casino & sports games__ and __5 Lakh+ active users__, written in a single paragraph___Design a high-impact 1200x400 ba.jpg" alt="Crypto Deposits">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\dell\Music\PLAYPROFIT\Here’s a compelling __1200x400 banner image prompt__ for __PlayProfit__, featuring __24_7 customer support__ and __20+ multi-language support__, written in a single paragraph___Design a sleek and professional 1200x4.jpg" alt="24/7 Support">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">OUR FEATURES</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <h3>5000+ LIVE GAMES</h3>
+                <p>Experience the thrill of our massive collection of live games with real dealers and instant results.</p>
+            </div>
+            <div class="feature-box">
+                <h3>SPORTS FANTASY</h3>
+                <p>Create your dream Odds and compete with others to win massive prizes in our sports fantasy leagues.</p>
+            </div>
+            <div class="feature-box">
+                <h3>COLOR TRADING</h3>
+                <p>Guess the Next Unique color trading platform with high returns and exciting gameplay for all users.</p>
+            </div>
+            <div class="feature-box">
+                <h3>LIVE CASINO</h3>
+                <p>Real-time casino games with professional dealers streamed directly to your device.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services">
+        <div class="services-container">
+            <h2 class="section-title">OUR SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 SERVICE</h3>
+                    <p>Our customer support team is available round the clock to assist you with any queries or issues.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>20+ LANGUAGES</h3>
+                    <p>English,Hindi,Marati,Kannada,Telugu We support multiple languages to ensure a seamless experience for users worldwide.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>MULTIPLE PAYMENTS</h3>
+                    <p>All UPI, bank transfers, and e-wallets accepted for instant deposits and withdrawals.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h3>CRYPTO DEPOSITS</h3>
+                    <p>We accept various cryptocurrencies for anonymous and secure transactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Payment Methods -->
+    <section class="payment-methods">
+        <h2>ACCEPTED PAYMENT METHODS</h2>
+        <div class="payment-icons">
+            <i class="fab fa-google-pay payment-icon"></i>
+            <i class="fab fa-cc-paypal payment-icon"></i>
+            <i class="fas fa-university payment-icon"></i>
+            <i class="fab fa-cc-visa payment-icon"></i>
+            <i class="fab fa-cc-mastercard payment-icon"></i>
+            <i class="fab fa-bitcoin payment-icon"></i>
+        </div>
+    </section>
+    
+    <!-- Highlight Text -->
+    <div class="highlight-text">
+        AUTO DEPOSIT • AUTO WITHDRAW • SUPER FAST WITHDRAW
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="footer-text">
+            At PLAYPROFIT, we promote responsible gaming and operate fully under Indian laws. Our platform offers skill-based games designed strictly for users aged 18 and above. Participation is prohibited in restricted states such as Andhra Pradesh, Telangana, Assam, Odisha, Nagaland, and Sikkim. It is the user’s responsibility to ensure compliance with their local laws before playing.
+
+Key Policies:
+🔞 Strictly 18+ only
+🇮🇳 Legal in most Indian states under skill gaming regulations
+❌ No support for states where online skill games are banned
+💡 Play responsibly — set limits, take breaks, and never chase losses
+🔐 Secure handling of all data and payments
+📞 24/7 Multilingual customer support available in 20+ languages
+
+Disclaimer: Real-money gaming involves financial risk and may be addictive. Please play responsibly. For support or responsible gaming assistance, contact our customer support team anytime..
+        </p>
+        <p class="copyright">
+            &copy; 2025 PlayProfit. All Rights Reserved.
+        </p>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.link/or4c7m" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">LOGIN</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" required>
+                </div>
+                <button type="submit" class="submit-btn">LOGIN</button>
+            </form>
+            <div class="switch-form">
+                Don't have an account? <a id="switchToRegister">Register here</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">REGISTER</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerUsername">Username</label>
+                    <input type="text" id="registerUsername" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPhone">Phone Number</label>
+                    <div class="country-code">
+                        <select id="countryCode" class="form-control country-code-select" required>
+                            <option value="91" selected>India (+91)</option>
+                            <option value="1">USA (+1)</option>
+                            <option value="44">UK (+44)</option>
+                            <option value="81">Japan (+81)</option>
+                            <option value="86">China (+86)</option>
+                            <option value="33">France (+33)</option>
+                            <option value="49">Germany (+49)</option>
+                            <option value="7">Russia (+7)</option>
+                            <option value="55">Brazil (+55)</option>
+                            <option value="61">Australia (+61)</option>
+                            <option value="82">South Korea (+82)</option>
+                            <option value="39">Italy (+39)</option>
+                            <option value="34">Spain (+34)</option>
+                            <option value="971">UAE (+971)</option>
+                            <option value="966">Saudi Arabia (+966)</option>
+                            <option value="65">Singapore (+65)</option>
+                            <option value="60">Malaysia (+60)</option>
+                            <option value="63">Philippines (+63)</option>
+                            <option value="66">Thailand (+66)</option>
+                            <option value="84">Vietnam (+84)</option>
+                            <option value="62">Indonesia (+62)</option>
+                        </select>
+                        <input type="tel" id="registerPhone" class="form-control phone-input" placeholder="10 digit number" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" class="form-control" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" class="form-control" required>
+                </div>
+                <button type="submit" class="submit-btn">REGISTER</button>
+            </form>
+            <div class="switch-form">
+                Already have an account? <a id="switchToLogin">Login here</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <span class="close-btn">&times;</span>
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>CONGRATULATIONS!</h2>
+            <p>Your account has been successfully created. Welcome to PlayProfit!</p>
+            <p>Our team will contact you shortly to verify your account.</p>
+            <a href="https://wa.link/xyqi3m" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Modal functionality
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const referralBtn = document.getElementById('referralBtn');
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
+        const successModal = document.getElementById('successModal');
+        const closeBtns = document.querySelectorAll('.close-btn');
+        const switchToRegister = document.getElementById('switchToRegister');
+        const switchToLogin = document.getElementById('switchToLogin');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        
+        // Open modals
+        loginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        });
+        
+        registerBtn.addEventListener('click', () => {
+            registerModal.style.display = 'flex';
+        });
+        
+        referralBtn.addEventListener('click', () => {
+            window.open('https://wa.link/ri39p8', '_blank');
+        });
+        
+        // Close modals
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'none';
+                successModal.style.display = 'none';
+            });
+        });
+        
+        // Switch between login and register
+        switchToRegister.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'flex';
+        });
+        
+        switchToLogin.addEventListener('click', () => {
+            registerModal.style.display = 'none';
+            loginModal.style.display = 'flex';
+        });
+        
+        // Close when clicking outside modal
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (e.target === registerModal) {
+                registerModal.style.display = 'none';
+            }
+            if (e.target === successModal) {
+                successModal.style.display = 'none';
+            }
+        });
+        
+        // Form submissions
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would normally send data to server
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            console.log('Login attempt:', { username, password });
+            alert('Login functionality would connect to your backend in a real implementation');
+            
+            loginModal.style.display = 'none';
+        });
+        
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('registerUsername').value;
+            const countryCode = document.getElementById('countryCode').value;
+            const phone = document.getElementById('registerPhone').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('registerConfirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Here you would normally send data to server
+            const userData = {
+                username,
+                phone: `+${countryCode}${phone}`,
+                password
+            };
+            
+            console.log('Registration data:', userData);
+            
+            // Store in Google Sheets (simulated - in a real app you'd use Google Apps Script)
+            // This is a placeholder - actual implementation requires server-side code
+            try {
+                // Simulate storing data
+                localStorage.setItem('playprofit_user_' + username, JSON.stringify(userData));
+                
+                // Show success modal
+                registerModal.style.display = 'none';
+                successModal.style.display = 'flex';
+                
+                // In a real implementation, you would send this data to your Google Sheet
+                // via a Google Apps Script web app or similar backend service
+            } catch (error) {
+                console.error('Error storing data:', error);
+                alert('Registration successful but data storage failed. Please contact support.');
+            }
+        });
+        
+        // Initialize country code
+        document.getElementById('countryCode').value = '91';
+    </script>
+</body>
+</html>
