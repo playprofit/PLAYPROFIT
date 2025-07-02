@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lotus360 - India's No.1 Gaming Platform. Get 10% real cash bonus on every refill. Join now for exclusive VIP benefits!">
-    <meta name="keywords" content="Lotus360, gaming platform, online gaming, India gaming, VIP gaming, real cash bonus, get new ID">
-    <title>Lotus360 - India's No.1 Gaming Platform</title>
-    <!-- Google Tags (replace with your actual tags) -->
+    <title>LOTUS360 - Premium Casino Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     
+<!-- Google Tags (replace with your actual tags) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOURTAGID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,260 +30,461 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1255726906058849&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-    <style>
+
+<style>
+
+        /* === GLOBAL STYLES === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #0a290a 0%, #000000 100%);
+            background: #0a2e1a; /* Dark green casino background */
             color: white;
-            min-height: 100vh;
             overflow-x: hidden;
+            min-height: 100vh;
             position: relative;
         }
-        
-        .scrolling-text {
-            position: fixed;
-            white-space: nowrap;
-            animation: scroll 20s linear infinite;
-            font-size: clamp(16px, 4vw, 24px);
-            font-weight: bold;
-            color: #ffcc00;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
-            width: 100%;
-            top: 10px;
-            z-index: 10;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        .bg-text {
+
+        /* === ANIMATED BACKGROUND ELEMENTS === */
+        .casino-elements {
             position: fixed;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            pointer-events: none;
             z-index: 0;
             opacity: 0.1;
-            font-size: clamp(10vw, 20vw, 30vw);
-            font-weight: bold;
-            color: #33cc33;
-            pointer-events: none;
-            text-align: center;
-            word-break: break-all;
-            overflow: hidden;
         }
-        
-        .container {
+
+        .casino-element {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(50px, -30px) rotate(90deg); }
+            50% { transform: translate(100px, 0) rotate(180deg); }
+            75% { transform: translate(50px, 30px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* === HEADER === */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 3px solid #ffcc00;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+
+        .lotus {
+            color: #2e8b57; /* Green */
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .three60 {
+            color: #ffcc00; /* Yellow */
+            text-shadow: 2px 2px 0 #000;
+            -webkit-text-stroke: 1px #000;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            margin-top: 5px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* === MAIN CONTENT === */
+        .main-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            text-align: center;
+        }
+
+        /* === FIRST SCREEN - ACTION BUTTONS === */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            gap: 20px;
             padding: 20px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
-        
-        .logo {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: bold;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #ffcc00, #33cc33);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
-        }
-        
-        .tagline {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            margin-bottom: 40px;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-        
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 100%;
-            max-width: 350px;
-        }
-        
-        .btn {
-            padding: 15px 25px;
+
+        .action-btn {
+            padding: 18px 30px;
             border: none;
             border-radius: 50px;
-            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: bold;
+            font-size: 1.2rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 300px;
             position: relative;
             overflow: hidden;
+            z-index: 1;
+            border: 2px solid #000;
         }
-        
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            animation: blink 1.5s infinite;
-        }
-        
-        .btn-vip {
-            background: linear-gradient(45deg, #ffcc00, #ff6600);
-            color: black;
-            animation: blink 2s infinite;
-        }
-        
-        .btn-bonus {
-            background: linear-gradient(45deg, #33cc33, #009933);
-            color: white;
-            animation: blink 1.8s infinite;
-        }
-        
-        @keyframes blink {
-            0% { opacity: 1; box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); }
-            50% { opacity: 0.7; box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); }
-            100% { opacity: 1; box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); }
-        }
-        
-        .btn:hover {
-            transform: scale(1.05);
-        }
-        
-        .btn:active {
-            transform: scale(0.98);
-        }
-        
-        .whatsapp-icon {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-        }
-        
-        .floating-coins {
-            position: fixed;
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .action-btn:hover::before {
+            left: 100%;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .vip-btn {
+            background: linear-gradient(45deg, #ffcc00, #ff9900);
+            color: #000;
+        }
+
+        .bonus-btn {
+            background: linear-gradient(45deg, #ff5722, #ff0000);
+            color: white;
+        }
+
+        /* === SECOND SCREEN - FEATURES === */
+        .features-section {
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffcc00;
+            border-radius: 15px;
+            padding: 25px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 204, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(255, 204, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* === CRICKETER SECTION === */
+        .cricketer-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cricketer-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+        }
+
+        .cricketer-image {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid #ffcc00;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .cricketer-content {
+            max-width: 500px;
+        }
+
+        .cricketer-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .cricketer-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* === SCROLLING TEXT === */
+        .scrolling-text {
+            background: linear-gradient(90deg, #ff0000, #ff6600);
+            color: white;
+            padding: 15px 0;
+            font-weight: bold;
+            white-space: nowrap;
             overflow: hidden;
+            position: relative;
+            z-index: 5;
         }
-        
-        .coin {
-            position: absolute;
-            background: radial-gradient(circle, #ffcc00 30%, #ff9900 70%);
-            width: 20px;
-            height: 20px;
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 45s linear infinite;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffcc00;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* === FLOATING WHATSAPP BUTTON === */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            animation: float linear infinite;
-            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            z-index: 100;
+            animation: bounce 2s infinite;
+            text-decoration: none;
+            border: 2px solid #000;
         }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
-        
-        /* Pulse animation for extra attention */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+
+        /* === FOOTER === */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #ffcc00;
+            position: relative;
+            z-index: 5;
         }
-        
-        .container {
-            animation: pulse 3s infinite;
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .action-btn {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+            
+            .feature-box {
+                padding: 20px;
+            }
+            
+            .cricketer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .floating-whatsapp {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="scrolling-text">10% REAL CASH BONUS ON EVERY REFILL • JOIN LOTUS360 TODAY • 10% REAL CASH BONUS ON EVERY REFILL • JOIN LOTUS360 TODAY •</div>
-    
-    <div class="bg-text">GET NEW ID GET NEW ID GET NEW ID GET NEW ID GET NEW ID</div>
-    
-    <div class="floating-coins" id="coins-container"></div>
-    
-    <div class="container">
-        <h1 class="logo">LOTUS360</h1>
-        <p class="tagline">India's No.1 Gaming Platform</p>
-        
-        <div class="buttons">
-            <a href="https://wa.me/+917022735841?text=Hi%20Lotus360%20team,%20I%20want%20to%20join%20your%20gaming%20platform" class="btn btn-whatsapp">
-                <span class="whatsapp-icon">📱</span> WhatsApp
-            </a>
-            <a href="https://wa.me/+917022735841?text=Hi%20Lotus360%20team,%20I%20want%20to%20get%20VIP%20ID" class="btn btn-vip">GET VIP ID</a>
-            <a href="https://wa.me/+917022735841?text=Hi%20Lotus360%20team,%20I%20want%20to%20claim%20my%20bonus" class="btn btn-bonus">GET BONUS</a>
+    <!-- === ANIMATED CASINO ELEMENTS === -->
+    <div class="casino-elements" id="casinoElements"></div>
+
+    <!-- === HEADER === -->
+    <header>
+        <div class="logo">
+            <span class="lotus">LOTUS</span><span class="three60">360</span>
         </div>
+        <div class="tagline">India's No.1 Trusted  Platform</div>
+    </header>
+
+    <!-- === MAIN CONTAINER === -->
+    <div class="main-container">
+        <!-- === FIRST SCREEN - ACTION BUTTONS === -->
+        <section class="action-buttons">
+            <a href="https://wa.link/fpvavh" class="action-btn whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WHATSAPP NOW
+            </a>
+            <a href="https://wa.me/+917022735841?text=I%20want%20VIP%20ID" class="action-btn vip-btn">
+                <i class="fas fa-crown"></i> GET VIP ID
+            </a>
+            <a href="https://wa.me/+917022735841?text=I%20want%20Bonus" class="action-btn bonus-btn">
+                <i class="fas fa-gift"></i> CLAIM BONUS
+            </a>
+        </section>
+
+        <!-- === SCROLLING TEXT === -->
+        <div class="scrolling-text">
+            <span>
+                 <span class="highlight">🎉WELCOME TO LOTUS360 NOW GET 10% INSTAT BONUS ON EVERY DEPSOIT | AND SELD DPSOIT AND WITHDRAW | MINIMUN ID ONLY 300/- </span>            
+        </div>
+
+        <!-- === SECOND SCREEN - FEATURES === -->
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-box">
+                    <div class="feature-icon">💳</div>
+                    <h3 class="feature-title">SELF DEPOSIT</h3>
+                    <p class="feature-text">Instant deposits with multiple payment options. No waiting time!</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">SELF WITHDRAW</h3>
+                    <p class="feature-text">Withdraw your winnings instantly to your bank account or e-wallet.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">5000+ GAMES</h3>
+                    <p class="feature-text">Massive collection of casino games, slots, and live games.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">MULTI WEBSITE</h3>
+                    <p class="feature-text">Access to multiple premium gambling platforms with one ID.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- === CRICKETER SECTION === -->
+        <section class="cricketer-section">
+            <div class="cricketer-container">
+                <img src="https://i.ibb.co/7Yf3v3P/cricketer.png" alt="Cricketer" class="cricketer-image">
+                <div class="cricketer-content">
+                    <h2 class="cricketer-title">JOIN THE WINNING TEAM</h2>
+                    <p class="cricketer-text">Just like our brand ambassador hits sixes, you can hit jackpots with LOTUS360. We provide the most trusted and exciting gambling experience in India.</p>
+                    <a href="https://wa.link/fpvavh" class="action-btn whatsapp-btn" style="max-width: 250px;">
+                        <i class="fab fa-whatsapp"></i> JOIN NOW
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
 
+    <!-- === FOOTER === -->
+    <footer>
+        <p>© 2025 LOTUS360. ALL RIGHTS RESERVED.</p>
+        <p>PLAY RESPONSIBLY • 18+ ONLY</p>
+    </footer>
+
+    <!-- === FLOATING WHATSAPP BUTTON === -->
+    <a href="https://wa.link/fpvavh" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- === ANIMATED ELEMENTS SCRIPT === -->
     <script>
-        // Create floating coins
-        function createCoins() {
-            const container = document.getElementById('coins-container');
-            const coinCount = window.innerWidth < 768 ? 20 : 30;
+        // Create floating casino elements
+        const elements = ['🎰', '🏏', '🃏', '🪙', '💰', '✈️', '🎲', '♠️', '♥️', '♦️', '♣️'];
+        const container = document.getElementById('casinoElements');
+        const elementCount = 20;
+
+        for (let i = 0; i < elementCount; i++) {
+            const element = document.createElement('div');
+            element.classList.add('casino-element');
+            element.textContent = elements[Math.floor(Math.random() * elements.length)];
             
-            for (let i = 0; i < coinCount; i++) {
-                const coin = document.createElement('div');
-                coin.classList.add('coin');
-                
-                // Random position
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100 + 100; // Start below viewport
-                
-                // Random size
-                const size = Math.random() * 10 + 10;
-                
-                // Random animation duration
-                const duration = Math.random() * 10 + 10;
-                
-                // Random delay
-                const delay = Math.random() * 10;
-                
-                coin.style.left = `${posX}%`;
-                coin.style.top = `${posY}%`;
-                coin.style.width = `${size}px`;
-                coin.style.height = `${size}px`;
-                coin.style.animationDuration = `${duration}s`;
-                coin.style.animationDelay = `${delay}s`;
-                
-                container.appendChild(coin);
-            }
+            // Random size (1.5rem to 3rem)
+            const size = Math.random() * 1.5 + 1.5;
+            element.style.fontSize = `${size}rem`;
+            
+            // Random position
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.top = `${Math.random() * 100}%`;
+            
+            // Random animation (10s to 25s)
+            element.style.animationDuration = `${Math.random() * 15 + 10}s`;
+            element.style.animationDelay = `${Math.random() * 5}s`;
+            
+            container.appendChild(element);
         }
-        
-        // Initialize
-        window.onload = function() {
-            createCoins();
-            
-            // Google Analytics event tracking for buttons
-            document.querySelectorAll('.btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    gtag('event', 'click', {
-                        'event_category': 'Button',
-                        'event_label': this.textContent.trim()
-                    });
-                });
-            });
-        };
-        
-        // Make it responsive on resize
-        window.onresize = function() {
-            const container = document.getElementById('coins-container');
-            container.innerHTML = '';
-            createCoins();
-        };
     </script>
 </body>
 </html>
